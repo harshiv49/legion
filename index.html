@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block body%}
+<div class="page">
+<h1 class="title">AllQuestions</h1>
+{% for q in questions%}
+<div class="question-list-item">
+<a href ="{% url 'question' q.id %}">
+<p class="question-list-item-title">
+
+<br>{{q.title}}
+</br>
+{{q.body}}
+</p>
+<p class="question-list-item-author">
+{{q.author.username}}</p>
+</a>
+   
+    {% endfor %} 
+    </div>
+ {% endblock %}
